@@ -8,7 +8,6 @@ module UserResponses
   end
 
   def get_players_names(num_players)
-    puts "get_players #{num_players}"
     players_names = []
     num_players.times do |num_players|
       puts "Please enter name of #{num_players+1}:"
