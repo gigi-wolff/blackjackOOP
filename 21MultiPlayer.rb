@@ -9,8 +9,8 @@ module UserResponses
 
   def get_players_names(num_players)
     players_names = []
-    num_players.times do |num_players|
-      puts "Please enter name of #{num_players+1}:"
+    num_players.times do |player_num|
+      puts "Please enter name of #{player_num+1}:"
       players_names << gets.chomp
     end
     players_names
@@ -58,11 +58,11 @@ module BlackJackHandValue
       end
     end
     # Set value of Ace in hand to 1 if previous value of 11 causes bust
-    value = value - 10 if (value>21 && includes_Ace?(cards_in_hand))
+    value = value - 10 if (value>21 && includes_ace?(cards_in_hand))
     value
   end
 
-  def includes_Ace?(cards)
+  def includes_ace?(cards)
     cards.each {|card| return true if card.value == 'Ace'}
     false
   end
